@@ -14,7 +14,7 @@ def vt_scan(url_test):
 
     params = {'apikey': api_key, 'resource': url_test, 'scan':1}
     response = requests.get(url, params=params)
-    print("Response: ", response)
+    # print("Response: ", response)
     response = response.json()
 
     # This means the url wasnt in VT's database, preparing a new scan
