@@ -14,12 +14,12 @@ def vt_scan(url_test):
 
     params = {'apikey': api_key, 'resource': url_test, 'scan':1}
     response = requests.get(url, params=params)
-    # print("Response: ", response)
+    print("Response: ", response)
     response = response.json()
 
     # This means the url wasnt in VT's database, preparing a new scan
     while("total" not in response and "positives" not in response and retry < 3):
-        print("[*] " + str(retry) + " try. Maximum of 3 tries with 30 seconds interval...")
+        #print("[*] " + str(retry) + " try. Maximum of 3 tries with 30 seconds interval...")
         # Intentionally sleeping for 30 seconds before coming back to retrieve results
         time.sleep(30)
         response = requests.get(url, params=params).json()
